@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
 
 # rails
 RUN gem install rails bundler
-COPY funds/Gemfile Gemfile
-WORKDIR /opt/app/funds
+COPY api/Gemfile Gemfile
+WORKDIR /opt/app/api
 RUN bundle install
 
 RUN chown -R user:user /opt/app

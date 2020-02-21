@@ -29,8 +29,8 @@ services:
       - redis
     volumes:
       - type: bind
-        source: ./funds
-        target: /opt/app/funds
+        source: ./api
+        target: /opt/app/api
     ports:
       - "8010:8010"
     env_file:
@@ -48,8 +48,8 @@ services:
       - redis
     volumes:
       - type: bind
-        source: ./funds
-        target: /opt/app/funds
+        source: ./api
+        target: /opt/app/api
     env_file:
       - .env
 
