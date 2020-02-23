@@ -2,9 +2,7 @@
   <div class="home">
     <NavBar />
     <MainPage v-if="!loggedIn" msg="Welcome to the Funds App." />
-    <div v-else>
-      <h1>Logged In</h1>
-    </div>
+    <DashBoard v-else />
   </div>
 </template>
 
@@ -12,9 +10,11 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import NavBar from "@/components/NavBar/NavBar.vue";
 import MainPage from "@/components/MainPage.vue";
+import DashBoard from "@/components/DashBoard.vue";
 
 @Component({
   components: {
+    DashBoard,
     MainPage,
     NavBar
   }
