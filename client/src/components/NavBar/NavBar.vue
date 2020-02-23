@@ -8,10 +8,10 @@
         <router-link to="/about">About</router-link>
         <a>Login</a>
       </div>
-      <!-- <div id="login-buttons">
+      <div id="login-buttons">
         <LoginButton userName="John Smith" />
         <LoginButton userName="Jane Doe" />
-      </div>-->
+      </div>
     </div>
   </nav>
 </template>
@@ -43,6 +43,10 @@ export default class NavBar extends Vue {
     &.router-link-exact-active {
       color: #42b983;
     }
+
+    &:hover {
+      color: #42b983;
+    }
   }
 }
 #navbar {
@@ -50,6 +54,10 @@ export default class NavBar extends Vue {
   display: flex;
   justify-content: space-between;
   padding: 0 40px 0 40px;
+}
+
+#navbar-left h1 {
+  cursor: pointer;
 }
 
 #navbar-right {

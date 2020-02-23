@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import Login from "../../api/Login";
 import store from "../../store";
 
 @Component
@@ -13,7 +14,8 @@ export default class LoginButton extends Vue {
   @Prop() private userName!: string;
 
   login() {
-    store.dispatch("setLoginStatus", { status: true });
+    // store.dispatch("setLoginStatus", { status: true });
+    store.dispatch("login");
   }
 }
 </script>
