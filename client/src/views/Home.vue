@@ -1,17 +1,46 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <NavBar />
+    <MainPage v-if="!loggedIn" msg="Welcome to the Funds App." />
+    <div v-else>
+      <h1>Logged In</h1>
+    </div>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import MainPage from "@/components/MainPage.vue";
 
-export default {
-  name: "Home",
+@Component({
   components: {
-    HelloWorld
+    MainPage,
+    NavBar
   }
-};
+})
+export default class Home extends Vue {
+  @Prop() private msg!: string;
+
+  get loggedIn() {
+    return this.$store.state.loggedIn;
+  }
+}
 </script>
+
+<style>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #4e504f;
+}
+</style>

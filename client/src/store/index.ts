@@ -24,6 +24,7 @@ export default new Vuex.Store({
         commit("SET_LOGIN_STATUS", { status: true });
       }).catch(error => {
         console.log(error.response);
+        commit("SET_LOGIN_STATUS", { status: false });
       });
     }
   },

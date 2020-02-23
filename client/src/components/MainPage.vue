@@ -1,21 +1,20 @@
 <template>
-  <div class="hello">
-    <NavBar />
+  <div id="main-page">
     <h1>{{ msg }}</h1>
+    <h3>Please LOGIN to continue.</h3>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import NavBar from "@/components/NavBar/NavBar.vue";
 
-@Component({
-  components: {
-    NavBar
-  }
-})
-export default class HelloWorld extends Vue {
+@Component
+export default class MainPage extends Vue {
   @Prop() private msg!: string;
+
+  get loggedIn() {
+    return this.$store.state.loggedIn;
+  }
 }
 </script>
 
